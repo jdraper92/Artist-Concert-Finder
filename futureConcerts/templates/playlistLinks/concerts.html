@@ -1,0 +1,15 @@
+<html>
+<center>
+<h1>your upcoming concerts:</h1>
+<br>
+<ul>
+{% for concert in concerts %}
+	<li>{{concert}}</li>
+	<br>
+{% endfor %}
+</ul>
+<br>
+<br>
+<a href="{% url 'playlistLinks:home' %}">home</a>
+</center>
+</html>

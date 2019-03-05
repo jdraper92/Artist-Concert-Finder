@@ -1,0 +1,12 @@
+<html>
+<center>
+<h1>Enter email to display concerts</h1>
+<form action="{% url 'playlistLinks:getConcerts' %}" method="post">
+	{% csrf_token %}
+	<input type="text" name="email" placeholder="enter your email">
+	<br>
+	<br>
+<input type="submit" value="submit">
+</form>
+</center>
+</html>
