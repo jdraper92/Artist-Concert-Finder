@@ -105,7 +105,9 @@ def addConcertsToDB(c):
 	return
 
 def sftp(db_name,rp):
-	srv = pysftp.Connection(host=os.environ['HOST'],username=os.environ['USERNAME'],password=os.environ['PASSWORD_OCEAN'])
+	cnopts = pysftp.CnOpts()
+	cnopts.hostkeys.add(os.environ['HOSTKEY1'], 'ssh-rsa', os.environ['HOSTKEY2'])
+	srv = pysftp.Connection(host=os.environ['HOST'],username=os.environ['USERNAME'],password=os.environ['PASSWORD_OCEAN'],cnopts=cnopts)
 	srv.put(db_name)
 	srv.close()
 	return
