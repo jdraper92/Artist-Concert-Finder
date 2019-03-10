@@ -40,7 +40,7 @@ def getData(request):
 	#user_concerts = c.getUsersConcerts(city,user_artists,180)
 	c.addArtistsToDB(u,user_artists)
 	c.addLinksToDB(u,links)
-	c.sftp('db.sqlite3','/emailer/')
+	#c.sftp('db.sqlite3','/emailer/')
 	return HttpResponseRedirect(reverse('playlistLinks:concerts',args=(u.id,)))
 
 def concerts(request,user_id):
